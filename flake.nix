@@ -59,7 +59,7 @@
 
           config = lib.mkIf config.services.dmemcg-booster.enable {
             systemd.packages = [
-              self.packages.${pkgs.system}.dmemcg-booster
+              self.packages.${pkgs.stdenv.hostPlatform.system}.dmemcg-booster
             ];
 
             systemd.services.dmemcg-booster-system = {
